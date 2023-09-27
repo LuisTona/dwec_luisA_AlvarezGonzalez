@@ -1,2 +1,3 @@
-console.log("Desde un fichero externo");
-console.log("Vamos a por el segundo commit");
+let a = prompt("Hola te llamas"), 
+    b = prompt("y tu localidad es");
+alert(`Hola ${a}, eres de ${b}` );
