@@ -1,6 +1,6 @@
 
 function fact(n){
-    let total = 0;
+    let total = 1;
     for(k = 0; k < n; k++){
         total = total * (n -k);
     }

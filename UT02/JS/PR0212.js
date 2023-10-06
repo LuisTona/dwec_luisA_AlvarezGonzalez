@@ -6,11 +6,6 @@ function isPrime(n){
         }
     }
     return (i<=2);
-    if(i <=2){
-        return true;
-    }else{
-        return false;
-    }
 }
 let num;
 do{
