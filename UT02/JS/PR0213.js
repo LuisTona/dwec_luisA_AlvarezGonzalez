@@ -1,14 +1,17 @@
 function isPrime(n){
-    let i = 0;
+    
     let c = "";
+
     for(j = 0; j < n; j++){
+        let i = 0;
         for(k = 0; k <= j; k++){
+            
             if(j % k == 0){
                 i++;
             }
         }
-        if(i<=2){
-            c = c + "" + j;
+        if(i <= 2){
+            c = c + "-" + j;
         }
     }
     return c;

@@ -16,6 +16,6 @@ let num;
 do{
 let num = prompt("Introduzca un numero");
 
-// console.log(isPrime(num));
-console.log(num);
+console.log(isPrime(num));
+
 }while(num != 0)
