@@ -1,20 +1,32 @@
 function convertBase(str, baseFrom, baseTo){
     let k = 0;
-    if(baseFrom != 10){
-        for(let i = 1; i <= str.length; i++){
-            k = k +(str[i-1] * (Math.pow (8,(str.length-i))));
-        } 
+    for(let i = 0; i <= str.length; i++){
+        if(str[i] >= baseFrom){
+            return "El numero es mayor que la base reviselo de nuevo";
+        }      
     }
+
+    if(baseFrom != baseTo){
+        for(let i = 1; i <= str.length; i++){
+            k = k +(str[i-1] * (Math.pow (baseFrom,(str.length-i))));
+        } 
     
+        let i = "";
+    
+        while(k > 0){
+            i = i + (k % baseTo);
+            k = Math.trunc(k / baseTo);
+        }
+    
+        for(let b = i.length-1; b >= 0; b--){
+            k = k + i[b];
+        }
+        
+        return Math.trunc(k);
+    
+    }else return str;  
 }
-let a = "213";
-let k=0;
-for(let i = 1; i <= a.length; i++){
-    k = k +(a[i-1] * (Math.pow (8,(a.length-i))));
- } 
-while(Int(a) > 0){
-    k=
-}
- //console.log(Math.pow(8, a.length));
- console.log(k);
- //console.log(k);
+
+
+ console.log(convertBase("30", 10, 2));
+ 
