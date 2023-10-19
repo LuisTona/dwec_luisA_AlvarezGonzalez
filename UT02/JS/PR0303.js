@@ -1,8 +1,8 @@
 function intersectObjects(obj1, obj2){
-    for(let key in usuario){
-        for(let key1 in apellido){
+    for(let key in obj1){
+        for(let key1 in obj2){
             if(key == key1){
-                return true;
+                console.log(key1);
             }
         }
     }
