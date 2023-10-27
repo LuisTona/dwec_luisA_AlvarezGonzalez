@@ -1,6 +1,7 @@
 function generateUsername(arr){
     arr.forEach(usuario =>{
-        let nick = usuario.name[0] ...usuario.apellido
+        let { name, apellido } = usuario;
+        let nick = name[0] + apellido
         usuario.nick= nick;
     });
     return arr;
