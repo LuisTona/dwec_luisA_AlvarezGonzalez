@@ -1,7 +1,8 @@
 function generateUsername(arr){
     arr.forEach(usuario =>{
         let { name, apellido } = usuario;
-        let nick = name[0] + apellido
+        let num = Math.trunc(Math.random()*100)
+        let nick = name[0] + apellido + num
         usuario.nick= nick;
     });
     return arr;
