@@ -16,16 +16,18 @@ let months = document.getElementById('months');
 
 let month = document.createElement('div');
 month.className = 'month';
+months.appendChild(month);
 
-let monthNumber = document.createElement('div');
-monthNumber.className = 'month-number';
+for(let k = 1; k <= 12; k++){
+    // monthName.innerHTML += nombreMes(k) +"<br>";
+    // monthNumber.innerHTML += k +"<br>";
+    let monthNumber = document.createElement('div');
+    monthNumber.className = 'month-number';
+    month.appendChild(monthNumber);
+    monthNumber.innerHTML = k;
 
-let monthName = document.createElement('div');
-monthName.className = 'month-name';
-
-// for(let k = 1; k <= 12; k++){
-//     monthNumber = k;
-//     monthName = nombreMes(k);
-//     month +=   monthNumber + monthName + "<br>";
-// }
-months.innerHTML = month;
+    let monthName = document.createElement('div');
+    monthName.className = 'month-name';
+    month.appendChild(monthName);
+    monthName.innerHTML = nombreMes(k);
+}
