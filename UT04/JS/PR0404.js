@@ -13,8 +13,5 @@ for(let k = 0; k < enlaces.length; k++){
 }
 console.log(cont);
 
-let parrafo = document.getElementsByTagName('p')[1];
-
-// let texto = parrafos[1].firstChild;
-// let textoCont =  texto.split(" ");
-// console.log(textoCont.length);
+let parrafo = document.getElementsByTagName('p')[1].textContent.split(' ').length;
+console.log(parrafo);
