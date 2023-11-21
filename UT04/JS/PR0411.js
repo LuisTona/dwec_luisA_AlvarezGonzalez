@@ -11,14 +11,5 @@ button.addEventListener('click', ()=>{
         inp.value= "";
         ul.innerHTML = lista.map(inp => `<li>${inp}</li>`).join("");
     }
-    //     lista[cont] = inp;
-    //     cont++;
-    //     ul.append(lista[cont]);
-    // }
-    //else{
-    //     cont = lista.length;
-    //     lista[cont] = inp;
-    //     cont++;
-    // }
     console.log(lista);
 })
