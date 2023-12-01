@@ -22,7 +22,9 @@ let div = document.querySelectorAll('div');
 
 board.addEventListener('click', (event)=>{   
     renderList();
-    board.innerHTML +=`<p>Coordenada X: ${event.pageX}</p>
+    board.innerHTML +=`
+    <p>Casilla: ${event.target.textContent}</p>
+    <p>Coordenada X: ${event.pageX}</p>
     <p>Coordenada Y: ${event.pageY}</p>`
 });
 
