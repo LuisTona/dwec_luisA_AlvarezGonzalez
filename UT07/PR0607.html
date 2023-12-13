@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .invalido{
+            border: solid 1px red;
+            background-color: rgba(255, 0, 0, 30%);
+            margin: 0px;
+            border-radius: 10px;
+            padding: 2px;
+            
+        }
+        #error{
+            padding-left: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            color: red;
+            border: 0px;
+            margin: 5px;
+            
+        }
+        #seguridad{
+            width: 150px;
+            height: 10px;
+            position: absolute;
+            top:70px;
+            left: 300px;
+            border-radius: 10px;
+            border: solid 1px gray;
+        }
+        .control{
+            background-color: red;
+            width: 40px;
+            height: 10px;
+            border-radius: 10px;
+        }
+        legend{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+        p{
+            margin: 0px;
+            padding: 0px;
+        }
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Registro</legend>
+        <form action="" name="register">
+            <label for="correo">Correo:</label>
+            <input type="text" name="correo" id="correo" required ><br>
+            <div id="error" class="invalido" hidden><p>Debes introducir un correo valido!</p></div>
+            <label for="pass">Contraseña:</label>
+            <input type="password" name="pass" id="pass" required><div id="seguridad"><div class="control"></div></div><br>
+            <label for="pass2">Repite la contraseña:</label>
+            <input type="password" name="pass2" id="pass2">
+            <input type="submit">
+        </form>
+    </fieldset>
+    <script src="./JS/script.js"></script>
+</body>
+</html>
