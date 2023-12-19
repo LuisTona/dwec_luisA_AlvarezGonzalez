@@ -35,9 +35,9 @@
             border-radius: 10px;
             border: solid 1px gray;
         }
-        .control{
+        #control{
             background-color: red;
-            width: 40px;
+            width: 0px;
             height: 10px;
             border-radius: 10px;
         }
@@ -62,7 +62,10 @@
             <input type="text" name="correo" id="correo" required ><br>
             <div id="error" class="invalido" hidden><p>Debes introducir un correo valido!</p></div>
             <label for="pass">Contraseña:</label>
-            <input type="password" name="pass" id="pass" required><div id="seguridad"><div class="control"></div></div><br>
+            <input type="password" name="pass" id="pass" minlength="6" required>
+                <div id="seguridad">
+                    <div id="control"></div>
+                </div><br>
             <label for="pass2">Repite la contraseña:</label>
             <input type="password" name="pass2" id="pass2">
             <input type="submit">
