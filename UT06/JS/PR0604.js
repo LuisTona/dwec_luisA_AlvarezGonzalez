@@ -23,7 +23,7 @@ function renderList(){
     clicker.style.height = top+'px';
     clicker.style.top = Math.random()*(window.innerHeight - top-50)+'px';
     clicker.style.left = Math.random()*(window.innerWidth - left)+'px';
-    console.log(top);
     div.append(clicker);
 }
 renderList();
+window.addEventListener('resize', renderList);

@@ -1,34 +1,3 @@
-
-// let li = document.querySelectorAll('li');
-
-// li.forEach((li)=>{
-//     li.addEventListener('click', handleClick);
-//     console.log(li.key);
-// })
-
-
-// function handleClick(event){
-//     console.log(event.currentTarget);
-//     li.forEach((li)=>{
-//         if(event.ctrlKey){
-//             event.currentTarget.className = 'selected'
-//         }else if(event.shiftKey){
-//             event.currentTarget.className = 'selected'
-//             if(li.className == 'selected'){
-                
-//                 console.log(li.id);
-//                 event.currentTarget.className = 'selected'
-//             }
-//             // li.className == 'selected' ?  
-//             // console.log(li.id)
-//             // :event.currentTarget.className = 'selected';
-//         }else{
-//             li.className = '';
-//             event.currentTarget.className = 'selected'
-//         }
-//     })
-// }
-
 const data = [{
     text: 'Primero',
     selected: false,
@@ -51,36 +20,40 @@ const data = [{
 }];
 
 function renderList(){
-    const divList = document.getElementsByTagName('div');
+    const divList = document.getElementById('body');
+    divList.innerHTML = ' ';
     data.forEach(({text, selected}, index)=>{
+        
         const divItem = document.createElement('div');
         divItem.textContent = text;
         divItem.classList.add = ('item');
         divItem.dataset.id = index;
         if(selected){
-            divItem.classList.add('selected');
-        }else {
-            divItem.classList.remove('selected');
+            divItem.className ='selected';
         }
-        divList[0].append(divItem);
+        divList.append(divItem);
+        
         divItem.addEventListener('click', handleClick);
     })
 }
 renderList();
 
 function handleClick(event){
-    console.log(event.currentTarget);
-    let divs = document.querySelectorAll('div');
-    divs.forEach((div)=>{
-        
-        if(event.ctrlKey){
-            event.currentTarget.className = 'selected'
-        
-        }else if(event.shiftKey){
-            
-        }else{
-            div.className = '';
-            event.currentTarget.className = 'selected'
+    let id = event.currentTarget.dataset.id
+    data.forEach((element, index)=>{
+        if(id == index && event.ctrlKey){
+            if(element.selected == true){
+                element.selected = false
+            }else{
+                element.selected = true;
+            }
+            renderList();
+        }else if(id == index){
+            element.selected = true;
+        }
+        else if(id != index && !event.ctrlKey){
+            element.selected = false;
         }
     })
+    renderList();
 }
