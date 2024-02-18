@@ -1,7 +1,9 @@
 const url = "https://swapi.dev/api/planets/"
 let page = url;
-
+let next = document.getElementById('next')
+let previous = document.getElementById('previous')
 function render(Page){
+    console.log(page);
     fetch(Page)
         .then(response => response.json())
         .then(data => controlDatos(data));
@@ -34,16 +36,17 @@ function controlDatos(data){
             tr.append(tdPoblacion);
             tdPoblacion.textContent = element.population; 
         });
-        // document.getElementById('next').addEventListener('click', ()=>{
-            
-        //     page = data.next;
-        //     render(page);
-        // });
-        // document.getElementById('previous').addEventListener('click', ()=>{
-            
-        //     page = data.previous;
-        //     render(page);
+        console.log(data);
+        
+        next.addEventListener('click', ()=>{
+            page = data.next;
+            render(page)
+        });
+        previous.addEventListener('click', ()=>{
+            page = data.previous;
+            render(page)
         })
+
 }
 
 render(page);

@@ -3,27 +3,29 @@ function validateFecha(fecha){
     fecha.addEventListener('blur',()=>{
     
         if(fecha.value.match(expresion)){
-            document.getElementById('valido').removeAttribute("hidden");
-            document.getElementById('invalido').setAttribute("hidden",true);
+            document.getElementById('fevalido').removeAttribute("hidden");
+            document.getElementById('feinvalido').setAttribute("hidden",true);
         }else{
+            document.getElementById('fevalido').setAttribute("hidden",true);
+            document.getElementById('feinvalido').removeAttribute("hidden");
+        }
+    })
+}
+function validateTlfn(Tlfn){
+    let expresion = /^(\+[0-9]{2})[0-9]{9}/
+    Tlfn.addEventListener('blur',()=>{
+    
+        if(Tlfn.value.match(expresion)){
+            document.getElementById('valido').removeAttribute("hidden");
+            document.getElementById('invalido').setAttribute("hidden");
+            console.log('hola');
+        }else{
+            console.log('adios');
             document.getElementById('valido').setAttribute("hidden",true);
             document.getElementById('invalido').removeAttribute("hidden");
         }
     })
 }
-// function validateTlfn(Tlfn){
-//     let expresion = /^\(\+[0-9]{2}\)[0-9]{9}/
-//     Tlfn.addEventListener('blur',()=>{
-    
-//         if(Tlfn.value.match(expresion)){
-//             // document.getElementById('valido').removeAttribute("hidden");
-//             console.log('hola');
-//         }else{
-//             console.log('adios');
-//             document.getElementById('valido').setAttribute("hidden",true);
-//         }
-//     })
-// }
 let Tlfn = document.getElementById('telefono');
 let fecha = document.getElementById('fecha');
 validateFecha(fecha);
